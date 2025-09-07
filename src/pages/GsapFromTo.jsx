@@ -1,6 +1,28 @@
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap/gsap-core";
+
 const GsapFromTo = () => {
   // TODO: Implement the gsap.fromTo() method
-
+  useGSAP(() => {
+    // eslint-disable-next-line no-undef
+    gsap.fromTo(
+      "#red-box",
+      {
+        x: 0,
+        rotation: 0,
+        borderRadius: "0%",
+      },
+      {
+        x: 250,
+        repeat: -1,
+        yoyo: true,
+        borderRadius: "100%",
+        rotation: 360,
+        duration: 2,
+        ease: "bounce.out",
+      }
+    );
+  }, []);
   return (
     <main>
       <h1>GsapFromTo</h1>
